@@ -6,6 +6,8 @@ import dns from 'dns';
 import fs from 'fs';
 import path from 'path';
 import nodemailer from 'nodemailer';
+import { fileURLToPath } from "url";
+
 
 // Fix Windows Node.js DNS resolution issue for mongodb+srv://
 dns.setDefaultResultOrder('ipv4first');
@@ -16,6 +18,9 @@ try {
 }
 
 dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -334,6 +339,11 @@ app.get('/api/forms', async (req, res) => {
       details: error.message
     });
   }
+});
+
+const frontendPath = path.join(__dirname, "dist");
+app.get("*splat", (req, res) => {
+    res.sendFile(path.join(frontendPath, "index.html"));
 });
 
 // Start Express server
