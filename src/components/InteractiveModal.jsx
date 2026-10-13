@@ -10,6 +10,7 @@ import HrCandidateMatcher from './HrCandidateMatcher';
 import RoleDashboards from './RoleDashboards';
 import AiAgentsSuite from './AiAgentsSuite';
 import ModuleGrid from './ModuleGrid';
+import ugskillLogo from '../assets/ugskill-logo.png';
 
 export default function InteractiveModal({ modalTarget, onClose, activeRole, setActiveRole }) {
   const [loginRole, setLoginRole] = useState('student');
@@ -108,8 +109,8 @@ export default function InteractiveModal({ modalTarget, onClose, activeRole, set
             <div className="max-w-xl mx-auto py-4 space-y-6">
               
               <div className="text-center">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white mx-auto mb-3 shadow-md shadow-indigo-600/20">
-                  <GraduationCap className="w-7 h-7" />
+                <div className="w-14 h-14 rounded-2xl bg-[#012a2e] flex items-center justify-center p-1 mx-auto mb-3 shadow-md shadow-[#012a2e]/25 border border-slate-200">
+                  <img src={ugskillLogo} alt="UGSkill Logo" className="w-full h-full object-contain rounded-xl" />
                 </div>
                 <h3 className="text-2xl font-extrabold text-slate-900">Get Started with UGSkill</h3>
                 <p className="text-xs text-slate-500 mt-1">Create your institution or student digital passport profile</p>
@@ -284,8 +285,8 @@ export default function InteractiveModal({ modalTarget, onClose, activeRole, set
           {modalTarget === 'login' && (
             <div className="max-w-md mx-auto py-8 space-y-6">
               <div className="text-center">
-                <div className="w-12 h-12 rounded-2xl bg-indigo-600 flex items-center justify-center text-white mx-auto mb-3 shadow-md shadow-indigo-600/20">
-                  <GraduationCap className="w-7 h-7" />
+                <div className="w-14 h-14 rounded-2xl bg-[#012a2e] flex items-center justify-center p-1 mx-auto mb-3 shadow-md shadow-[#012a2e]/25 border border-slate-200">
+                  <img src={ugskillLogo} alt="UGSkill Logo" className="w-full h-full object-contain rounded-xl" />
                 </div>
                 <h3 className="text-2xl font-extrabold text-slate-900">Sign In to UGSkill</h3>
                 <p className="text-xs text-slate-500 mt-1">Access your Digital Passport, LMS, MST &amp; HR Portals</p>

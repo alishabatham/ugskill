@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { GraduationCap, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import ugskillLogo from '../assets/ugskill-logo.png';
 
 export default function Navbar({ activeTab, setActiveTab, onOpenInteractiveModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -44,9 +45,13 @@ export default function Navbar({ activeTab, setActiveTab, onOpenInteractiveModal
         <div className="flex items-center justify-between h-20">
           
           {/* Brand Logo */}
-          <div className="flex items-center gap-3 cursor-pointer" onClick={() => handleNavClick('hero')}>
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 via-blue-600 to-indigo-700 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
-              <GraduationCap className="w-6 h-6 text-white" />
+          <div className="flex items-center gap-3 cursor-pointer group" onClick={() => handleNavClick('hero')}>
+            <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-xl overflow-hidden shadow-md shadow-[#012a2e]/25 border border-slate-200/90 bg-[#012a2e] flex items-center justify-center p-0.5 transition-all duration-300 group-hover:scale-105 group-hover:shadow-indigo-500/20">
+              <img 
+                src={ugskillLogo} 
+                alt="UGSkill Logo" 
+                className="w-full h-full object-contain rounded-lg" 
+              />
             </div>
             <div>
               <span className="text-2xl font-extrabold tracking-tight text-slate-900 font-sans block leading-none">
